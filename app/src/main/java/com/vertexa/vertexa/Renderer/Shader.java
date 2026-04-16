@@ -92,6 +92,20 @@ public class Shader {
         glUniform3f(varLocation, vec.x, vec.y, vec.z);
     }
 
+    public void uploadMat3f(String varName, org.joml.Matrix3f mat3) {
+        int varLocation = glGetUniformLocation(shaderProgramID, varName);
+        use();
+        float[] matBuffer = new float[9];
+        mat3.get(matBuffer);
+        org.lwjgl.opengl.GL20.glUniformMatrix3fv(varLocation, false, matBuffer);
+    }
+
+    public void uploadVec4f(String varName, org.joml.Vector4f vec) {
+        int varLocation = glGetUniformLocation(shaderProgramID, varName);
+        use();
+        org.lwjgl.opengl.GL20.glUniform4f(varLocation, vec.x, vec.y, vec.z, vec.w);
+    }
+
     private void checkCompileErrors(int shader, String type) {
         if (glGetShaderi(shader, GL_COMPILE_STATUS) == 0) {
             System.err.println("ERROR: Shader Compilation Failed (" + type + ")\n" + glGetShaderInfoLog(shader));

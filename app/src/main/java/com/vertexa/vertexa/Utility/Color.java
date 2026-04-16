@@ -19,6 +19,10 @@ public class Color {
 
     }
 
+    public org.joml.Vector4f toVec4() {
+        return new org.joml.Vector4f(r, g, b, a);
+    }
+
     private float bound(float x) {
         return Math.max(0.0f, Math.min(1.0f, x));
     }
