@@ -1,0 +1,45 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+// These are the versions and settings for your engine
+def lwjglVersion = "3.3.3"
+def jomlVersion = "1.10.5"
+def lwjglNatives = "natives-windows" // Hardcoded for your Windows setup
+
+dependencies {
+    // 3D Math
+    implementation "org.joml:joml:${jomlVersion}"
+
+    // LWJGL Core & Essentials
+    implementation platform("org.lwjgl:lwjgl-bom:${lwjglVersion}")
+    
+    // We only need the main 3D modules for now to keep things fast
+    implementation "org.lwjgl:lwjgl"
+    implementation "org.lwjgl:lwjgl-glfw"
+    implementation "org.lwjgl:lwjgl-opengl"
+    implementation "org.lwjgl:lwjgl-stb"
+    implementation "org.lwjgl:lwjgl-assimp"
+
+    // Native drivers for Windows
+    runtimeOnly "org.lwjgl:lwjgl::${lwjglNatives}"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::${lwjglNatives}"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::${lwjglNatives}"
+    runtimeOnly "org.lwjgl:lwjgl-stb::${lwjglNatives}"
+    runtimeOnly "org.lwjgl:lwjgl-assimp::${lwjglNatives}"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'com.vertexa.Main'
+}
