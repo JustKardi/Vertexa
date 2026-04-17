@@ -1,10 +1,10 @@
 package com.vertexa;
 
-import com.vertexa.vertexa.Window;
+import com.vertexa.vertexa.Core.Engine;
 
 public class Main {
     public static void main(String[] args) {
-        Window window = Window.get();
-        window.run();
+        Engine engine = Engine.get();
+        engine.start();
     }
 }

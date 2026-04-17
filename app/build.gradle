@@ -32,6 +32,14 @@ dependencies {
     runtimeOnly "org.lwjgl:lwjgl-opengl::${lwjglNatives}"
     runtimeOnly "org.lwjgl:lwjgl-stb::${lwjglNatives}"
     runtimeOnly "org.lwjgl:lwjgl-assimp::${lwjglNatives}"
+
+    // ImGui Java Bindings
+    def imguiVersion = "1.86.11"
+    implementation "io.github.spair:imgui-java-binding:$imguiVersion"
+    implementation "io.github.spair:imgui-java-lwjgl3:$imguiVersion"
+    
+    // ImGui Natives (Required to actually run)
+    runtimeOnly "io.github.spair:imgui-java-natives-windows:$imguiVersion"
 }
 
 java {
