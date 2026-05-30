@@ -5,7 +5,7 @@ import org.joml.Vector3f;
 public class DirectionalLight {
     public Vector3f direction;
     public Vector3f color;
-    public float intensity; // Change this to float
+    public float intensity;
 
     public DirectionalLight(Vector3f direction, Vector3f color, float intensity) {
         this.direction = direction;

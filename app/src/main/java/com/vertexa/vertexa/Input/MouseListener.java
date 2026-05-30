@@ -48,6 +48,13 @@ public class MouseListener {
         }
     }
 
+    public static boolean mouseButtonDown(int button) {
+        if (button >= 0 && button < get().mouseButtonPressed.length) {
+            return get().mouseButtonPressed[button];
+        }
+        return false;
+    }
+
     public static float getDx() {
         return (float) (get().xPos - get().lastX);
     }

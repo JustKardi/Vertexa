@@ -42,17 +42,17 @@ public class GameObject {
     }
 
     public Matrix4f getWorldMatrix() {
-        Matrix4f matrix = new Matrix4f()
-                .translation(position)
-                .rotateX((float)Math.toRadians(rotation.x))
-                .rotateY((float)Math.toRadians(rotation.y))
-                .rotateZ((float)Math.toRadians(rotation.z))
-                .scale(scale);
+        Matrix4f local = new Matrix4f()
+            .translate(position)
+            .rotateX((float)Math.toRadians(rotation.x))
+            .rotateY((float)Math.toRadians(rotation.y))
+            .rotateZ((float)Math.toRadians(rotation.z))
+            .scale(scale);
 
         if (parent != null) {
-            return new Matrix4f(parent.getWorldMatrix()).mul(matrix);
+            return new Matrix4f(parent.getWorldMatrix()).mul(local);
         }
-        return matrix;
+        return local;
     }
 
     public List<GameObject> getChildren() {
@@ -63,6 +63,11 @@ public class GameObject {
         if (mesh == null) return;
 
         Matrix4f modelMatrix = getWorldMatrix();
+
+        float[] col = new float[16];
+        modelMatrix.get(col);
+        System.out.println("[MODEL] translation column: " + col[12] + ", " + col[13] + ", " + col[14]);
+
         Matrix4f mvp = new Matrix4f(projection).mul(view).mul(modelMatrix);
 
         shader.uploadMat4f("uModel", modelMatrix);

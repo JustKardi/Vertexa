@@ -70,6 +70,10 @@ public class Shader {
     }
 
     public void uploadMat4f(String varName, Matrix4f mat4) {
+
+        int loc = glGetUniformLocation(shaderProgramID, varName);
+        if (loc == -1) System.out.println("[SHADER] Uniform not found: " + varName);
+
         if (!uniforms.containsKey(varName)) {
             try {
                 createUniform(varName);
@@ -177,6 +181,10 @@ public class Shader {
         setUniform(uniformName + ".color", dl.color);
         setUniform(uniformName + ".direction", dl.direction);
         setUniform(uniformName + ".intensity", dl.intensity);
+    }
+
+    public int getShaderProgramID() {
+        return shaderProgramID;
     }
 
 }
