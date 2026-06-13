@@ -1,4 +1,4 @@
-package com.vertexa.vertexa.Editor;
+package com.vertexa.vertexa.Editor.Paneling;
 
 import org.lwjgl.opengl.GL11;
 import static org.lwjgl.opengl.GL11.GL_DEPTH_BUFFER_BIT;

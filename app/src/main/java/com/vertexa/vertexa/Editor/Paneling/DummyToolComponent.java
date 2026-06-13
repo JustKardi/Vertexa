@@ -1,6 +1,9 @@
-package com.vertexa.vertexa.Editor;
+package com.vertexa.vertexa.Editor.Paneling;
 
-import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT;
+import static org.lwjgl.opengl.GL11.GL_DEPTH_BUFFER_BIT;
+import static org.lwjgl.opengl.GL11.glClear;
+import static org.lwjgl.opengl.GL11.glClearColor;
 
 public class DummyToolComponent implements IPanelComponent {
     private float r, g, b;

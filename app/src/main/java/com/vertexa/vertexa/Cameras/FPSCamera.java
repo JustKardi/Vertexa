@@ -1,4 +1,4 @@
-package com.vertexa.vertexa;
+package com.vertexa.vertexa.Cameras;
 
 import org.joml.Matrix4f;
 import org.joml.Vector3f;

@@ -1,5 +1,7 @@
 package com.vertexa.vertexa.Utility;
 
+import org.joml.Vector3f;
+
 public class Color {
 
     private float r, g, b, a;
@@ -56,5 +58,9 @@ public class Color {
             }
             default -> throw new IllegalArgumentException("Entered value is not an accepted parameter.");
         }
+    }
+
+    public Vector3f toVec3() {
+        return new Vector3f(r, g, b);
     }
 }

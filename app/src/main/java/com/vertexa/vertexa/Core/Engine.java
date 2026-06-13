@@ -2,8 +2,8 @@ package com.vertexa.vertexa.Core;
 
 import static org.lwjgl.glfw.GLFW.glfwGetTime;
 
-import com.vertexa.vertexa.Editor.ImGuiLayer;
-import com.vertexa.vertexa.Editor.PanelLayoutManager;
+import com.vertexa.vertexa.Editor.Paneling.ImGuiLayer;
+import com.vertexa.vertexa.Editor.Paneling.PanelLayoutManager;
 import com.vertexa.vertexa.Meshes.Mesh;
 import com.vertexa.vertexa.Meshes.MeshFactory;
 import com.vertexa.vertexa.Objects.GameObject;
@@ -36,7 +36,7 @@ public class Engine {
 
     public void start() {
         window.init();
-        defaultShader = new Shader("/shaders/default.vert", "/shaders/default.frag");
+        defaultShader = new Shader("/shaders/default/default.vert", "/shaders/default/default.frag");
         
         layoutManager = new PanelLayoutManager();
         imguiLayer = new ImGuiLayer();

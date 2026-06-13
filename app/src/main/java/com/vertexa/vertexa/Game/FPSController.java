@@ -7,7 +7,7 @@ import static org.lwjgl.glfw.GLFW.GLFW_KEY_LEFT_SHIFT;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_S;
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_W;
 
-import com.vertexa.vertexa.FPSCamera;
+import com.vertexa.vertexa.Cameras.FPSCamera;
 import com.vertexa.vertexa.Input.KeyListener;
 import com.vertexa.vertexa.Input.MouseListener;
 import com.vertexa.vertexa.Objects.GameObject;

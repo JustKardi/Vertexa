@@ -1,4 +1,4 @@
-package com.vertexa.vertexa.Editor;
+package com.vertexa.vertexa.Editor.Paneling;
 
 public interface IPanelComponent {
     void onInit(DisplayPanel parent);

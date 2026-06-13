@@ -1,4 +1,4 @@
-package com.vertexa.vertexa.Editor;
+package com.vertexa.vertexa.Editor.Paneling;
 
 import java.util.ArrayList;
 import java.util.List;
