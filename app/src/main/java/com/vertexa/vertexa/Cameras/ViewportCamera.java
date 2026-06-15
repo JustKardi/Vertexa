@@ -6,10 +6,10 @@ import org.joml.Vector3f;
 public class ViewportCamera {
     
     public Vector3f position;
-    private Vector3f orientation;
+    public Vector3f orientation;
 
-    private float yaw = 0;
-    private float pitch = 0;
+    public float yaw = 0;
+    public float pitch = 0;
 
     public ViewportCamera(float x, float y, float z) {
         position = new Vector3f(x, y, z);
